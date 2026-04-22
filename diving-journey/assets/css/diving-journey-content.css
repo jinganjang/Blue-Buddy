@@ -1,0 +1,1487 @@
+body {
+    line-height: 1.6;
+    font-family: 'Noto Sans KR';
+    color: var(--black-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 120;
+}
+
+.hero-video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video-section video {
+    position: relative;
+    z-index: 0;
+    width: 150%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.75);
+}
+
+.hero-video-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+}
+
+.hero-brand-logo {
+    display: block;
+    width: clamp(200px, 42vw, 420px);
+    height: auto;
+    max-width: min(92vw, 520px);
+    filter: drop-shadow(0 4px 28px rgba(0, 0, 0, 0.45));
+}
+
+.hero-scroll-wrap {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(28px, 7vh, 80px);
+    transform: translateX(-50%);
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.hero-scroll-hint {
+    display: block;
+    animation: hero-scroll-nudge 2.2s ease-in-out infinite;
+}
+
+.hero-scroll-icon {
+    display: block;
+    width: clamp(32px, 5vw, 56px);
+    height: auto;
+    transform: rotate(90deg);
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes hero-scroll-nudge {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.85;
+    }
+    50% {
+        transform: translateY(14px);
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-scroll-hint {
+        animation: none;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+.diving-indicator-section {
+    min-height: 560vh;
+    position: relative;
+    background: radial-gradient(circle at 28% 25%, rgba(255, 255, 255, 0.15), transparent 46%), #072a85;
+}
+
+/* 히어로 ↔ 인디케이터 경계: 그라데이션 50%가 두 섹션 사이 선에 오도록 가운데 정렬 */
+.diving-indicator-section::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: clamp(200px, 48vh, 640px);
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(rgba(9, 29, 83, 0) 0%, rgba(9, 29, 83, 1) 50%, rgba(9, 29, 83, 0) 100%);
+}
+
+/* 인트로만 있는 페이지: 원형 지표 없이 스크롤 머무름 구간 */
+.diving-indicator-section:not(:has(.indicator-circle-stage)) {
+    min-height: 280vh;
+}
+
+.diving-indicator-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(circle at 35% 38%, rgba(0, 0, 0, 0.38), transparent 24%);
+    pointer-events: none;
+}
+
+.indicator-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.indicator-intro-stage,
+.indicator-circle-stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.35s ease;
+}
+
+.indicator-intro-stage {
+    z-index: 2;
+}
+
+.indicator-intro-text {
+    color: #fff;
+    font-size: clamp(30px, 4vw, 38px);
+    letter-spacing: -1.2px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.25s linear, transform 0.25s linear;
+}
+
+.indicator-circle-stage {
+    z-index: 3;
+    opacity: 0;
+}
+
+.indicator-circle-stage .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indicator-circle {
+    width: min(54vw, 590px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    isolation: isolate;
+}
+
+.wrapper_fs .indicator-circle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.indicator-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+    transition: 0.45s ease;
+    z-index: 5;
+}
+
+.indicator-label {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 300;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    z-index: 3;
+}
+
+.indicator-center {
+    width: 60%;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.indicator-center h2 {
+    font-size: 66px;
+    margin-bottom: 40px;
+    color: var(--white-color);
+}
+
+.indicator-center p {
+    color: var(--white-color);
+}
+
+.reveal-step.is-visible {
+    opacity: 1;
+}
+
+.indicator-dot.is-visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.dot-1 { left: 50%; top: 0; }
+.dot-2 { left: 85.36%; top: 14.64%; }
+.dot-3 { left: 100%; top: 50%; }
+.dot-4 { left: 85.36%; top: 85.36%; }
+.dot-5 { left: 50%; top: 100%; }
+.dot-6 { left: 14.64%; top: 85.36%; }
+.dot-7 { left: 0; top: 50%; }
+.dot-8 { left: 14.64%; top: 14.64%; }
+
+.label-1 { left: 50%; top: -58px; transform: translateX(-50%); }
+.label-2 { left: 96%; top: 7%; }
+.label-3 { left: 106%; top: 50%; transform: translateY(-50%); }
+.label-4 { left: 96%; top: 93%; transform: translateY(-100%); }
+.label-5 { left: 50%; top: 110%; transform: translateX(-50%); }
+.label-6 { left: -6%; top: 93%; transform: translateY(-100%); }
+.label-7 { left: -8%; top: 50%; transform: translateY(-50%); }
+.label-8 { left: -12%; top: 7%; }
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.cards-section {
+    padding: 180px 0;
+}
+
+/* Season's Best — 1281px 이상: 기존 4열(카피+카드3) · 1280px 이하: 컴팩트 헤더 + 3열 카드 */
+.season-best {
+    width: 100%;
+    padding-top: 240px;
+    padding-bottom: 120px;
+}
+
+.season-best-title {
+    text-align: right;
+    margin-bottom: 60px;
+}
+
+.season-best-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 3fr;
+    gap: clamp(20px, 4vw, 75px);
+}
+
+.season-best-card-wrap {
+    display: grid;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    grid-template-columns: 1fr 0.75fr 0.75fr;
+}
+
+.season-best-heading {
+    margin-bottom: 24px;
+    color: var(--black-color);
+}
+.season-best-heading .span-b {
+    color: var(--primary-color);
+}
+
+.season-best-subtitle {
+    margin-bottom: 42px;
+}
+
+.season-best-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1;
+}
+
+.season-best .hover-zoom-card img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.season-card {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.season-card a {
+    display: block;
+}
+
+.season-image-frame {
+    display: block;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.season-card img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+    transform-origin: center;
+}
+
+.season-card:hover img {
+    transform: scale(1.08);
+}
+
+.season-card h3 {
+    padding: 0;
+}
+
+.season-card-lg .season-image-frame {
+    width: 100%;
+    max-height: 470px;
+}
+
+
+.season-card-md .season-image-frame,
+.season-card-sm .season-image-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.season-card-sm {
+    margin-bottom: 132px;
+}
+
+.season-card-md a,
+.season-card-sm a {
+    position: relative;
+}
+
+.season-card-lg h3.card-title {
+    padding-top: 18px;
+    color: var(--black-color);
+    line-height: 160%;
+}
+
+
+
+.card-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.card-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hover-zoom-card {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.hover-zoom-card a {
+    display: block;
+}
+
+.hover-zoom-card img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+    border-radius: 20px;
+}
+
+.hover-zoom-card:hover img {
+    transform: scale(1.08);
+}
+
+.hover-zoom-card h3 {
+    padding: 20px 0 0;
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+.season-card-md h3,
+.season-card-sm h3 {
+    position: absolute;
+    right: 24px;
+    bottom: 20px;
+    margin-top: 0;
+    padding: 0;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+.divers-reflections {
+    overflow: hidden;
+}
+
+.reflection-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.reflection-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    animation: reflectionFlow 30s linear infinite;
+}
+
+.reflection-slider:hover .reflection-track {
+    animation-play-state: paused;
+}
+
+.reflection-card {
+    width: 280px;
+    flex: 0 0 280px;
+}
+
+.reflection-review-card {
+    width: min(45vw, 420px);
+    flex: 0 0 min(45vw, 420px);
+    min-height: min(330px, 28vw);
+    border-left: 2px solid rgba(32, 62, 181, 0.35);
+    padding: 0 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--black-color);
+    background-color: transparent;
+}
+
+.reflection-review-name {
+    margin-top: 24px;
+    font-size: 22px;
+    color: var(--black-color);
+    font-weight: 500;
+}
+
+@keyframes reflectionFlow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.diving-archive-section {
+    padding-top: 180px;
+    padding-bottom: 280px;
+}
+
+.archive-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.archive-head .section-title {
+    margin-bottom: 0;
+}
+
+.archive-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(32, 62, 181, 0.35);
+    border-radius: 999px;
+    padding: 10px 18px;
+    color: var(--primary-color);
+    font-size: 19px;
+    line-height: 1;
+}
+
+.archive-more-btn img {
+    width: 14px;
+    height: 14px;
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.archive-card {
+    background-color: transparent;
+}
+
+.archive-card a {
+    display: block;
+}
+
+.archive-image-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.archive-image-wrap img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: clamp(280px, 26vw, 320px);
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.archive-card:hover .archive-image-wrap img {
+    transform: scale(1.06);
+}
+
+
+
+.card-txt-wrap {
+    padding: 0 10px;
+}
+
+.archive-card .card-title {
+    margin-bottom: 2px;
+}
+
+.archive-card .card-title span {
+    font-weight: 400;
+}
+
+.ocean-lower-gradient-wrap {
+    position: relative;
+    isolation: isolate;
+}
+
+.ocean-lower-gradient-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #f2f2f2 0%, #ffffff 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ocean-lower-gradient-wrap > section {
+    position: relative;
+    z-index: 1;
+}
+
+.marine-highlights-section {
+    padding: 140px 0;
+}
+
+.marine-content {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: clamp(80px, 7vw, 160px);
+    align-items: center;
+    padding-top: clamp(20px, 2vw, 30px);
+}
+
+.marine-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+}
+
+.marine-tab {
+    border: none;
+    background-color: transparent;
+    color: var(--black-color);
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    padding: 6px 10px;
+    text-align: right;
+    width: 180px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    position: relative;
+}
+
+.marine-tab::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--black-color);
+    transition: width 0.28s ease;
+}
+
+.marine-tab:hover::before {
+    width: 100%;
+}
+
+.marine-tab.is-active {
+    color: var(--black-color);
+    font-weight: 600;
+}
+
+.marine-tab.is-active::before {
+    width: 100%;
+}
+
+.marine-panel {
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: #fff;
+    height: clamp(500px, 45vw, 600px);
+    position: relative;
+}
+
+.marine-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.marine-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.marine-panel-text {
+    position: absolute;
+    left: clamp(105px, 10vw, 120px);
+    top: clamp(105px, 10vw, 120px);
+    width: min(66%, clamp(500px, 45vw, 620px));
+    color: #fff;
+    z-index: 2;
+}
+
+.marine-panel-text h3 {
+    font-size: clamp(32px, 3.5vw, 38px);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 22px;
+}
+
+.marine-panel-text h3 .marine-title-en {
+    font-size: clamp(22px, 2.4vw, 30px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    opacity: 0.92;
+}
+
+.marine-meta {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.marine-meta li {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.marine-meta li:last-child {
+    margin-bottom: 0;
+}
+
+.marine-meta span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    height: 30px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #16398f;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.marine-meta p {
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.marine-panel-text p {
+    font-size: 19px;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+}
+
+.biby-promotions {
+    padding-bottom: 120px;
+    overflow-x: clip;
+}
+
+.biby-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(min(200px, 28vw), 1fr));
+    gap: clamp(12px, 2vw, 20px);
+    width: 100%;
+    max-width: 100%;
+}
+
+.biby-card {
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 8px 18px rgba(12, 28, 80, 0.1);
+    min-width: 0;
+    min-height: 0;
+}
+
+.biby-card-featured {
+    grid-row: span 2;
+}
+
+.biby-card a {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    height: 100%;
+    min-height: 0;
+}
+
+.biby-image-frame {
+    display: block;
+    overflow: hidden;
+    min-height: 0;
+    height: 100%;
+}
+
+.biby-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+    aspect-ratio: 2 / 1;
+}
+
+.biby-card:hover .biby-image-frame img {
+    transform: scale(1.08);
+}
+
+.biby-card-text {
+    padding: clamp(12px, 2vw, 15px) clamp(14px, 3.5vw, 55px) clamp(14px, 2vw, 20px) clamp(14px, 2.5vw, 35px);
+    min-width: 0;
+}
+
+.biby-card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.biby-card-text p {
+    color: var(--black-color);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    word-break: keep-all;
+}
+
+.biby-card-text span {
+    font-size: 14px;
+    color: #7b7b7b;
+}
+
+@media (max-width: 1280px) {
+    .indicator-intro-text { font-size: clamp(20px, 1.8vw, 24px); }
+    .indicator-circle { width: min(60vw, 520px); }
+    .indicator-center h2 { font-size: clamp(44px, 5vw, 54px); }
+    .indicator-center p { font-size: clamp(14px, 2vw, 16px); }
+    .indicator-label { font-size: clamp(15px, 2vw, 17px); }
+    .section-title:not(.en-title) { font-size: clamp(28px, 3.5vw, 32px); }
+    .section-title { margin-bottom: clamp(30px, 3vw, 35px); }
+    .card-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    /* Season's Best — 1280px 이하: 좌 카피 / 우 Season's Best + View More, 카드 3열 스태거 */
+    .season-best {
+        padding-top: clamp(100px, 12vw, 200px);
+        padding-bottom: clamp(72px, 8vw, 120px);
+    }
+
+    .season-best-layout {
+        display: contents;
+    }
+
+    .season-best-copy {
+        padding-right: 0;
+        display: grid;
+        grid-template-columns: 2fr 1.4fr;
+    }
+    
+    .season-best-card-wrap {
+        grid-template-columns: 1.12fr 0.9fr 0.9fr;
+        column-gap: clamp(16px, 2vw, 24px);
+        row-gap: 18px;
+        align-items: flex-end;
+    }
+
+    .season-best-title {
+        text-align: right;
+        line-height: 1;
+        margin-bottom: 32px;
+    }
+
+    .season-best-heading {
+        margin-bottom: 12px;
+    }
+
+    .season-best-subtitle {
+        grid-column: 1;
+        grid-row: 2;
+        margin: 0;
+    }
+
+    .season-best-more {
+        grid-column: 2 / 4;
+        grid-row: 2;
+        justify-self: end;
+        align-self: end;
+        margin-bottom: 3px;
+    }
+
+    .season-card-lg {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .season-card-md {
+        grid-column: 2;
+        grid-row: 3;
+        margin-top: clamp(40px, 6vw, 96px);
+    }
+
+    .season-card-sm {
+        grid-column: 3;
+        grid-row: 3;
+        margin-top: clamp(0px, 1.5vw, 20px);
+        margin-bottom: 120px;
+    }
+
+    .season-card-lg .season-image-frame {
+        height: min(52vw, 400px);
+    }
+
+    .season-card-md .season-image-frame,
+    .season-card-sm .season-image-frame {
+        height: min(42vw, 300px);
+    }
+
+    .season-card-md .season-image-frame::after,
+    .season-card-sm .season-image-frame::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        background: linear-gradient(to top, rgba(9, 29, 83, 0.72) 0%, rgba(9, 29, 83, 0.12) 45%, transparent 72%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .season-card-lg .desc {
+        color: rgba(9, 29, 83, 0.62);
+    }
+
+    .archive-grid {
+        gap: 20px;
+    }
+
+    .archive-image-wrap img {
+        height: clamp(250px, 23vw, 280px);
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    .biby-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 18px;
+    }
+
+    .biby-card-featured {
+        grid-column: auto / span 2;
+        grid-row: auto;
+    }
+
+    .biby-card a {
+        grid-template-rows: auto auto;
+    }
+
+    .biby-image-frame {
+        height: auto;
+    }
+
+    .biby-image-frame img {
+        height: auto;
+        max-height: min(180px, 52vw);
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+
+    .biby-card-featured .biby-image-frame img {
+        max-height: min(280px, 52vw);
+    }
+
+    .marine-content {
+        gap: clamp(40px, 5vw, 80px);
+    }
+
+    .marine-panel {
+        height: clamp(500px, 35vw, 600px);
+    }
+
+    .marine-panel-text {
+        left: clamp(60px, 6vw, 80px);
+        top: clamp(60px, 6vw, 80px);
+        width: calc(100% - clamp(120px, 12vw, 160px));
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .indicator-intro-text { font-size: clamp(18px, 1.6vw, 20px); }
+    .indicator-circle { width: min(70vw, 380px); }
+    .indicator-center h2 { font-size: clamp(36px, 4vw, 42px); }
+    .indicator-center p { font-size: clamp(12px, 1.6vw, 14px); }
+    .indicator-label { font-size: clamp(13px, 1.6vw, 15px); }
+    .section-title:not(.en-title) { font-size: clamp(24px, 3vw, 28px); }
+    .section-title { margin-bottom: clamp(30px, 2.5vw, 40px); }
+
+    .season-best-title {
+        text-align: right;
+        margin-bottom: clamp(10px, 2vw, 18px);
+    }
+    .season-best-subtitle {
+        margin-bottom: clamp(35px, 3vw, 45px);
+    }
+
+    .season-best-card-wrap {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: clamp(16px, 2vw, 24px);
+        row-gap: 18px;
+        align-items: flex-end;
+    }
+
+    .season-card-lg,
+    .season-card-md,
+    .season-card-sm {
+        margin: 0;
+    }
+
+    .season-card-lg .season-image-frame,
+    .season-card-md .season-image-frame,
+    .season-card-sm .season-image-frame {
+        height: 100%;
+        max-height: none;
+        position: relative;
+    }
+
+    .season-card-lg a,
+    .season-card-md a,
+    .season-card-sm a {
+        position: relative;
+        height: 100%;
+    }
+
+    .season-card-lg .season-image-frame::after,
+    .season-card-md .season-image-frame::after,
+    .season-card-sm .season-image-frame::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        background: linear-gradient(to top, rgba(9, 29, 83, 0.72) 0%, rgba(9, 29, 83, 0.12) 45%, transparent 72%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .season-card-lg h3.card-title,
+    .season-card-md h3.card-title,
+    .season-card-sm h3.card-title {
+        position: absolute;
+        right: 16px;
+        bottom: 14px;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+        z-index: 2;
+    }
+
+    .season-card-lg .desc {
+        display: none;
+    }
+
+    .season-best-copy {
+        display: block;
+    }
+
+    .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .archive-image-wrap img {
+        height: clamp(230px, 21vw, 250px);
+    }
+
+    /* Marine Highlights — 1024px 이하: 탭 + 패널 1열 */
+    .marine-content {
+        grid-template-columns: 1fr;
+    }
+
+    .marine-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        /* gap: 8px 14px; */
+        gap: clamp(2px, 0.6vw, 6px);
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        padding-bottom: 4px;
+    }
+
+    .marine-list::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .marine-list::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 999px;
+    }
+
+    .marine-list li {
+        flex-shrink: 0;
+    }
+
+    .marine-tab {
+        width: auto;
+        font-size: clamp(16px, 1.6vw, 18px);
+        padding: 4px clamp(8px, 1.2vw, 12px);
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .marine-tab::before {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: auto;
+    }
+
+    .marine-panel {
+        height: 420px;
+    }
+
+    .marine-panel-text {
+        left: clamp(40px, 5vw, 60px);
+        top: clamp(40px, 5vw, 60px);
+        width: calc(100% - clamp(120px, 4vw, 160px));
+    }
+
+    .marine-panel-text h3 {
+        font-size: clamp(24px, 2.8vw, 28px);
+        margin-bottom: 12px;
+    }
+
+    .marine-panel-text h3 .marine-title-en {
+        font-size: clamp(16px, 2vw, 21px);
+        font-weight: 400;
+    }
+
+    .marine-meta {
+        padding-bottom: 14px;
+        margin-bottom: 14px;
+    }
+
+    .marine-meta li {
+        grid-template-columns: 100px 1fr;
+        gap: clamp(15px, 1.8vw, 20px);
+    }
+
+    .marine-meta span {
+        height: 24px;
+        font-size: 14px;
+    }
+
+    .marine-meta p {
+        font-size: 13px;
+    }
+
+    .marine-panel-text p {
+        font-size: 16px;
+    }
+
+    .marine-content {
+        gap: clamp(15px, 2vw, 30px);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .diving-indicator-section {
+        min-height: 400vh;
+    }
+
+    .diving-indicator-section:not(:has(.indicator-circle-stage)) {
+        min-height: 240vh;
+    }
+
+    .indicator-circle {
+        width: min(84vw, 430px);
+    }
+
+    .indicator-sticky {
+        top: 0;
+        height: 100vh;
+    }
+
+    .indicator-label {
+        font-size: 16px;
+    }
+
+    .indicator-center h2 {
+        font-size: 44px;
+        margin-bottom: 14px;
+    }
+
+    .label-1 { left: 50%; top: -44px; transform: translateX(-50%); }
+    .label-2 { left: 93%; top: 8%; }
+    .label-3 { left: 101%; top: 50%; transform: translateY(-50%); }
+    .label-4 { left: 93%; top: 92%; transform: translateY(-100%); }
+    .label-5 { left: 50%; top: 108%; transform: translateX(-50%); }
+    .label-6 { left: -2%; top: 92%; transform: translateY(-100%); }
+    .label-7 { left: -6%; top: 50%; transform: translateY(-50%); }
+    .label-8 { left: -8%; top: 8%; }
+
+    .card-grid-3,
+    .card-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .biby-image-frame {
+        height: auto;
+    }
+
+    .biby-card-featured .biby-image-frame img {
+        height: auto;
+        max-height: min(200px, 52vw);
+        aspect-ratio: 2 / 1;
+        object-fit: cover;
+    }
+    .biby-image-frame img {
+        height: auto;
+        max-height: min(120px, 52vw);
+        aspect-ratio: 2 / 1;
+        object-fit: cover;
+    }
+
+    .biby-card-text h3 {
+        font-size: 16px;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    .biby-card-text p {
+        font-size: 13px;
+    }
+
+    .biby-card-text span {
+        font-size: 12px;
+    }
+
+    .archive-head {
+        gap: 16px;
+        margin-bottom: 26px;
+    }
+
+    .archive-image-wrap img {
+        height: 250px;
+    }
+
+    .reflection-review-card {
+        width: 40vw;
+        flex-basis: 40vw;
+        min-height: min(280px, 36vw);
+    }
+
+    .reflection-review-text {
+        font-size: 14px;
+    }
+
+    .reflection-review-name {
+        font-size: 18px;
+        margin-top: 18px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    /* Marine Highlights — 768px 이하: 탭을 가로 2행(4×2)으로 배치 */
+    .marine-list {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px 6px;
+        justify-content: stretch;
+        align-items: stretch;
+        overflow-x: visible;
+        overflow-y: visible;
+        padding-bottom: 0;
+    }
+
+    .marine-list li {
+        min-width: 0;
+    }
+
+    .marine-tab {
+        width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+        word-break: keep-all;
+        font-size: clamp(13px, 2.8vw, 15px);
+        padding: clamp(3px, 1vw, 6px) clamp(6px, 1.5vw, 12px);
+    }
+
+    .indicator-intro-text { font-size: clamp(16px, 1.4vw, 18px); }
+    .indicator-circle { width: min(80vw, 380px); }
+    .indicator-center h2 { font-size: clamp(36px, 4vw, 42px); }
+    .indicator-center p { font-size: clamp(12px, 1.6vw, 14px); }
+    .indicator-label { font-size: clamp(13px, 1.6vw, 15px); }
+    .section-title:not(.en-title) { font-size: clamp(20px, 2.5vw, 24px); }
+    .section-title { margin-bottom: clamp(20px, 3vw, 30px); }
+
+    .archive-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .biby-promotions {
+        padding-bottom: 80px;
+        overflow-x: visible;
+    }
+    
+    .biby-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 14px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 16px;
+        padding: 10px 16px 22px;
+        box-sizing: border-box;
+    }
+
+    .biby-card {
+        flex: 0 0 min(78vw, 260px);
+        width: min(78vw, 260px);
+        min-width: min(78vw, 260px);
+        max-width: min(78vw, 260px);
+        scroll-snap-align: start;
+        box-shadow:
+        0 1px 2px rgba(12, 28, 80, 0.05),
+        0 6px 20px rgba(12, 28, 80, 0.07);
+        border: 1px solid rgba(12, 28, 80, 0.06);
+    }
+
+    .biby-card-featured {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    
+    .biby-card a {
+        display: grid;
+        grid-template-rows: auto auto;
+        height: 100%;
+        min-height: 0;
+    }
+    
+    .biby-image-frame {
+        height: auto;
+    }
+
+    .biby-image-frame img,
+    .biby-card-featured .biby-image-frame img {
+        height: auto;
+        max-height: min(180px, 34vw);
+        aspect-ratio: 10 / 16;
+        object-fit: cover;
+    }
+    
+    .biby-card-text {
+        padding: 10px 12px 12px;
+    }
+    
+    .biby-card-title {
+        white-space: normal;
+        text-overflow: unset;
+    }
+    
+    .biby-card-text p {
+        display: none; 
+    }
+
+    .reflection-review-card {
+        width: min(50vw, 360px);
+        flex-basis: min(50vw, 360px);
+        min-height: min(240px, 56vw);
+    }
+
+    .marine-panel-text {
+        width: calc(100% - clamp(80px, 10vw, 120px));
+    }
+
+    .marine-meta span {
+        font-size: clamp(12px, 1.6vw, 14px);
+    }
+
+    .marine-panel-text p {
+        font-size: clamp(14px, 1.6vw, 16px);
+    }
+
+    /* Season's Best — 768px 이하: 기존 402px용 세로 1열 쌓기 */
+    .season-best .container {
+        display: block;
+    }
+
+    .season-best-title {
+        text-align: left;
+        margin-bottom: 18px;
+    }
+
+    .season-best-layout {
+        display: block;
+    }
+
+    .season-best-copy {
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    .season-best-heading {
+        margin-bottom: 10px;
+    }
+
+    .season-best-subtitle {
+        margin-bottom: 14px;
+    }
+
+    .season-best-card-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .season-card-lg,
+    .season-card-md,
+    .season-card-sm {
+        width: 100%;
+        margin: 0;
+        grid-column: unset;
+        grid-row: unset;
+    }
+
+    .season-card-lg .season-image-frame,
+    .season-card-md .season-image-frame,
+    .season-card-sm .season-image-frame {
+        height: clamp(160px, 36vw, 240px);
+        position: relative;
+    }
+
+    .season-card-lg .desc {
+        display: none;
+    }
+}
+
+@media (max-width: 402px) {
+    .section-title {
+        margin-bottom: 20px;
+    }
+
+    .season-best-subtitle {
+        font-size: 14px;
+    }
+
+    .season-card-lg .season-image-frame,
+    .season-card-md .season-image-frame,
+    .season-card-sm .season-image-frame {
+        height: clamp(120px, 36vw, 140px);
+        position: relative;
+    }
+
+    .archive-image-wrap img {
+        height: clamp(180px, 16vw, 200px);
+    }
+
+    .marine-panel {
+        height: 440px;
+    }
+
+    .marine-panel-text h3 {
+        line-height: 1;
+        margin-bottom: 16px;
+    }
+
+    .marine-meta li {
+        grid-template-columns: 0.8fr 1fr;
+    }
+
+}

@@ -1,0 +1,6 @@
+/* Home bundle: reset · common.css는 index에서 별도 링크 · 푸터는 index에서 별도 링크 */
+@import '../../../diving-journey/assets/css/diving-journey-content.css';
+@import '../home-buddy-path.css';
+@import '../divers-community.css';
+@import '../find-diving-style-cta.css';
+@import '../../../map/map.css';

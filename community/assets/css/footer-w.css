@@ -1,0 +1,28 @@
+@import 'footer-base.css';
+
+.footer .wave-box {
+    background-color: #295084;
+    margin-top: -3px;
+}
+
+.footer {
+    --footer-bg-color: #FFFFFF;
+    --footer-text-color: var(--primary-color);
+}
+
+.footer .inner-footer {
+    position: relative;
+    z-index: 2;
+}
+
+.footer .inner-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: clamp(56px, 9vw, 110px);
+    background-color: #FFFFFF;
+    z-index: -1;
+    pointer-events: none;
+}

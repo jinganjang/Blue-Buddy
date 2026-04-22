@@ -1,0 +1,302 @@
+@import 'common.css';
+@import 'footer-b.css';
+
+body {
+    line-height: 1.6;
+    font-family: 'Noto Sans KR';
+    color: var(--black-color);
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 120;
+}
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/bg.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-text-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text {
+    color: var(--white-color);
+}
+
+.content-wrap {
+    display: flex;
+}
+
+.content-img {
+    width: 100%;
+    max-width: 950px;
+}
+
+.content-img img {
+    width: 100%;
+    display: block;
+}
+
+.content-text-wrap {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.cont-sub-title {
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.cont-title {
+    font-weight: 300;
+}
+
+.cont-desc-bold {
+    margin-top: 80px;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: -1.5px;
+}
+
+.cont-desc-light {
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: -1.5px;
+}
+
+.btn {
+    margin-top: 30px;
+    color: var(--black-color);
+}
+
+/* ── GSAP ScrollTrigger + sticky: index2.html 패턴 (.sec + sticky 래퍼 + absolute 패널) ── */
+:root {
+    --bb-header-h: clamp(60px, 5.5vw, 80px);
+    /* 스크롤 구간 전체 길이(머무름이 길어지면 같이 키우면 전환이 더 여유롭게 느껴짐) */
+    --bb-contents-scroll: 780vh;
+}
+
+/* 스크롤 거리: 타임라인·머무름 구간에 맞춰 넉넉히 (GSAP end와 연동) */
+.bb-contents-sec {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: var(--bb-contents-scroll);
+    background-color: #fff;
+}
+
+/* 헤더 아래 남는 높이 = 1뷰포트(내부 스크롤 없이 이 영역만 사용) */
+.bb-pin-wrap {
+    position: sticky;
+    /* top: var(--bb-header-h); */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bb-panel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.bb-panel .content-wrap {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 100%;
+}
+
+.bb-panel .content-img {
+    width: 50%;
+    min-height: 0;
+    flex-shrink: 1;
+}
+
+.bb-panel .content-img img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.bb-panel .content-text-wrap {
+    min-height: 0;
+    flex-shrink: 1;
+    padding-left: clamp(20px, 4vw, 60px);
+    padding-right: clamp(20px, 4vw, 60px);
+}
+
+.bb-panel--01 {
+    z-index: 1;
+}
+.bb-panel--02 {
+    z-index: 2;
+}
+.bb-panel--03 {
+    z-index: 3;
+}
+.bb-panel--04 {
+    z-index: 4;
+}
+
+.bb-contents-sec .content-wrap {
+    margin-top: 0;
+}
+
+/* 1280px */
+@media (max-width: 1280px) {
+
+    .hero-section {
+    width: 100%;
+    }
+
+    .cont-sub-title {
+    font-size: 24px;
+    }
+
+.cont-title {
+    font-size: clamp(40px, 5.5vw, 70px);
+    }
+
+.cont-desc-bold {
+    font-size: clamp(16px, 2.5vw, 18px);
+    }
+
+.cont-desc-light {
+    font-size: clamp(16px, 2.5vw, 18px);
+    
+    }
+
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+
+    .cont-sub-title {
+    font-size: clamp(18px, 2.2vw, 22px);
+    }
+
+    .cont-title {
+    font-size: clamp(30px, 5vw, 50px);
+    letter-spacing: -1px;
+    }
+
+    .cont-desc-bold {
+    margin-top: 50px;
+    font-size: clamp(14px, 2vw, 16px);
+    }
+
+    .cont-desc-light {
+    font-size: clamp(14px, 2vw, 16px);
+    
+    }
+}
+
+/* 768px — 컨텐츠 세로 스택 */
+@media (max-width: 768px) {
+
+    .content-wrap {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .hero-text-box {
+        font-size: 60px;
+    }
+
+    .content-img {
+        max-width: 393px;
+    }
+
+    .content-text-wrap {
+        width: 100%;
+        height: 50vh;
+        margin-top: clamp(20px, 10vw, 100px);
+        align-items: flex-start;
+    }
+
+    .cont-sub-title {
+    font-size: clamp(14px, 2vw, 16px);
+    }
+
+    .cont-title {
+    font-size: clamp(36px, 5vw, 40px);
+    }
+
+    .cont-desc-bold {
+    margin-top: 30px;
+    font-size: clamp(14px, 2vw, 15px);
+    }
+
+    .cont-desc-light {
+    font-size: clamp(14px, 2vw, 15px);
+    
+    }
+
+    .btn {
+    font-size: clamp(16px, 2vw, 18px);
+    }
+
+    .bb-contents-sec .content-wrap {
+        margin-top: 0;
+    }
+
+    .bb-panel .content-wrap {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    .bb-panel .content-img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .bb-panel .content-img img {
+        height: 50vh;
+    }
+
+    .bb-panel .content-text-wrap {
+        width: 100%;
+        padding: clamp(16px, 4vw, 40px);
+    }
+}

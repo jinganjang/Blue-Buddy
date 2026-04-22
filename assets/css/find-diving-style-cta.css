@@ -1,0 +1,272 @@
+/* divers-community 아래 — Find Your Diving Style CTA (장식 배경: test-bg.webp ::before) */
+
+.find-diving-style-cta {
+    position: relative;
+    margin-top: -1px;
+    margin-bottom: 0;
+    padding-top: 100px;
+    border: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 770px;
+    padding: clamp(40px, 6vw, 88px) clamp(20px, 4vw, 60px);
+    background-color: #0a1740;
+    color: #ffffff;
+}
+
+.find-diving-style-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url(../images/test-bg.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    margin-bottom: -160px;
+}
+
+.find-diving-style-cta__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 2.2vw, 22px);
+    width: 100%;
+    max-width: 48rem;
+    margin-top: 350px;
+}
+
+.find-diving-style-cta__heading {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.25em 0.8em;
+}
+
+.find-diving-style-cta__title-light {
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 200;
+    letter-spacing: -2px;
+}
+
+.find-diving-style-cta__title-strong {
+    font-size: clamp(36px, 4.4vw, 64px);
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+.find-diving-style-cta__desc {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: clamp(20px, 1.4vw, 22px);
+    font-weight: 300;
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: -1px;
+    margin-bottom: clamp(15px, 1.4vw, 20px);
+}
+
+.find-diving-style-cta__desc .span-b {
+    font-weight: 500;
+}
+
+/* 흰 배경 · 딥블루 텍스트 (첨부 시안) */
+.find-diving-style-cta__btn {
+    margin-top: clamp(4px, 1vw, 12px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 20px 12px 32px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--black-color);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: clamp(16px, 1.35vw, 18px);
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 1;
+    border: none;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.find-diving-style-cta__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.find-diving-style-cta__btn:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.find-diving-style-cta__btn-ico {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.find-diving-style-cta__btn-ico img {
+    width: 11px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 1280px) {
+    .find-diving-style-cta {
+        min-height: 600px;
+        padding-top: 100px;
+    }
+    .find-diving-style-cta__inner {
+        margin-top: 250px;
+    }
+    .find-diving-style-cta::before {
+        margin-bottom: -110px;
+    }
+    .find-diving-style-cta__title-light {
+        font-size: clamp(32px, 4vw, 44px);
+    }
+    .find-diving-style-cta__title-strong {
+        font-size: clamp(42px, 4.4vw, 56px);
+    }
+    .find-diving-style-cta__btn {
+        font-size: 20px;
+    }
+    .find-diving-style-cta__btn-ico {
+        width: 30px;
+        height: 30px;
+    }
+    .find-diving-style-cta__desc {
+        font-size: clamp(18px, 1.4vw, 20px);
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .find-diving-style-cta {
+        min-height: 500px;
+        padding-top: 100px;
+        gap: 8px;
+    }
+    .find-diving-style-cta__inner {
+        margin-top: 180px;
+    }
+    .find-diving-style-cta__title-light {
+        font-size: clamp(28px, 3.6vw, 36px);
+    }
+    .find-diving-style-cta__title-strong {
+        font-size: clamp(32px, 4.8vw, 48px);
+    }
+    .find-diving-style-cta__desc {
+        font-size: clamp(16px, 1.2vw, 18px);
+        margin-bottom: 8px;
+    }
+    .find-diving-style-cta__btn {
+        font-size: 18px;
+        padding: 10px 16px 10px 24px;
+    }
+    .find-diving-style-cta__btn-ico {
+        width: 26px;
+        height: 26px;
+    }
+    .find-diving-style-cta__heading {
+        gap: 0.25em 0.6em;
+    }
+}
+
+@media (max-width: 768px) {
+    .find-diving-style-cta {
+        min-height: 360px;
+        padding-top: 80px;
+        gap: 8px;
+    }
+    .find-diving-style-cta__inner {
+        margin-top: 100px;
+        gap: 10px;
+    }
+    .find-diving-style-cta::before {
+        margin-bottom: -60px;
+    }
+    .find-diving-style-cta__heading {
+        gap: 0.25em 0.5em;
+    }
+    .find-diving-style-cta__title-light {
+        font-size: clamp(24px, 3.8vw, 28px);
+        letter-spacing: -1px;
+    }
+    .find-diving-style-cta__title-strong {
+        font-size: clamp(28px, 5vw, 36px);
+        letter-spacing: -1px;
+    }
+    .find-diving-style-cta__desc {
+        font-size: clamp(14px, 2.3vw, 16px);
+    }
+    .find-diving-style-cta__btn {
+        font-size: 14px;
+        gap: 10px;
+        padding: 8px 12px 8px 20px;
+    }
+    .find-diving-style-cta__btn-ico {
+        width: 20px;
+        height: 20px;
+    }
+    .find-diving-style-cta__btn-ico img {
+        width: 8px;
+    }
+}
+
+@media (max-width: 402px) {
+    .find-diving-style-cta {
+        min-height: 300px;
+        padding: 28px 16px 36px;
+    }
+    .find-diving-style-cta__inner {
+        margin-top: 160px;
+    }
+    .find-diving-style-cta__heading {
+        gap: 0.25em 0.35em;
+    }
+    .find-diving-style-cta::before {
+        margin-bottom: -45px;
+    }
+    .find-diving-style-cta__title-light {
+        font-size: clamp(20px, 6.6vw, 22px);
+    }
+    .find-diving-style-cta__title-strong {
+        font-size: clamp(24px, 8.4vw, 28px);
+    }
+    .find-diving-style-cta__desc {
+        font-size: clamp(14px, 2.3vw, 16px);
+    }
+    .find-diving-style-cta__btn {
+        font-size: 12px;
+        gap: 8px;
+        padding: 6px 10px 6px 16px;
+    }
+    .find-diving-style-cta__btn-ico {
+        width: 16px;
+        height: 16px;
+    }
+    .find-diving-style-cta__btn-ico img {
+        width: 6px;
+    }
+}

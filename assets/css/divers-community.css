@@ -1,0 +1,143 @@
+/* 메인: home-buddy-path-wrap 아래 — Diver’s Community 무한 스크롤 갤러리 */
+
+.divers-community {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    padding: clamp(72px, 8vw, 120px) 0 0;
+}
+
+.divers-community__header-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: clamp(20px, 4vw, 40px);
+    margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.divers-community__header-row .divers-community__title {
+    margin-bottom: 0;
+}
+
+.divers-community-marquee {
+    overflow: hidden;
+    width: 100%;
+    /* 호버 시 카드가 위로 올라올 여유 */
+    padding: clamp(16px, 2.5vw, 28px) 0;
+}
+
+.divers-community-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: clamp(16px, 2vw, 24px);
+    animation: divers-community-scroll 48s linear infinite;
+    will-change: transform;
+}
+
+.divers-community-set {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: clamp(16px, 2vw, 24px);
+}
+
+@keyframes divers-community-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.divers-community-marquee:has(.divers-community-item:hover) .divers-community-track,
+.divers-community-marquee:has(.divers-community-item:focus-visible) .divers-community-track {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .divers-community-track {
+        animation: none;
+        transform: none;
+    }
+}
+
+.divers-community-item {
+    flex: 0 0 auto;
+    /* 1280px 초과: 큰 화면용 (이전 400px 기준 유지) */
+    width: clamp(300px, 24vw, 400px);
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.35s ease;
+}
+
+@media (max-width: 1280px) {
+    .divers-community__header-row {
+        margin-bottom: clamp(32px, 4vw, 48px);
+    }
+
+    .divers-community-item {
+        width: clamp(240px, 24vw, 300px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .divers-community__header-row {
+        margin-bottom: clamp(24px, 3vw, 32px);
+    }
+
+    .divers-community-item {
+        width: clamp(200px, 28vw, 240px);
+    }
+}
+
+.divers-community-item:hover,
+.divers-community-item:focus-visible {
+    transform: translateY(-20px);
+    z-index: 2;
+}
+
+.divers-community-item:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+.divers-community-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .divers-community__header-row {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .divers-community__header-row {
+        margin-bottom: clamp(24px, 3vw, 32px);
+    }
+
+    .divers-community-item {
+        width: clamp(160px, 24vw, 200px);
+        border-radius: 14px;
+    }
+
+    .divers-community-item:hover,
+    .divers-community-item:focus-visible {
+        transform: translateY(-12px);
+    }
+}
+
+@media (max-width: 402px) {
+    .divers-community__header-row {
+        margin-bottom: clamp(20px, 2vw, 24px);
+    }
+
+    .divers-community-item {
+        width: 120px;
+    }
+}

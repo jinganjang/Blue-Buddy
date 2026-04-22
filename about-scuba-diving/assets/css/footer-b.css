@@ -1,0 +1,7 @@
+@import 'common.css';
+@import '../../../assets/css/common/footer-base.css';
+
+.footer {
+    --footer-bg-color: #203EB5;
+    --footer-text-color: var(--white-color);
+}

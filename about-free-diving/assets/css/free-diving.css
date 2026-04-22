@@ -1,0 +1,444 @@
+@import 'common.css';
+@import 'footer-b.css';
+
+body {
+    line-height: 1.6;
+    font-family: 'Noto Sans KR';
+    color: var(--black-color);
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 120;
+}
+
+
+.Scuba-diving-top {
+    width: 100%;
+    height: 100%;
+    margin-top: 120px;
+    margin-bottom: 240px;
+    text-align: center;
+}
+
+.big-title {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 800;
+    /* BLACK 굵기 */
+    font-size: 200px;
+    color: var(--gray-color);
+    /* #f2f2f2 */
+    letter-spacing: -5px;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+
+.scuba-diving-top-img {
+    width: 100%;
+    margin-top: -40px;
+}
+
+.scuba-cont-text {
+    display: flex;
+}
+
+.en-title {
+    width: 50%;
+}
+
+.scuba-text-wrap {
+    width: 50%;
+    height: 399px;
+}
+
+.scaba-text-main {
+    margin-bottom: 20px;
+}
+
+.title {
+    color: var(--black-color);
+    font-size: clamp(24px, 2.8vw, 36px);
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 130%;
+}
+
+.subtitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.desc {
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+.scuba-img-wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 1%;
+    margin-bottom: 240px;
+}
+
+.scuba-img-wrap img {
+    width: 49.5%;
+}
+
+.scuba-gear{
+    width: 100%;
+    
+}
+
+.right {
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    margin-bottom: 40px;
+}
+
+.scuba-gear-wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.scuba-gear-img-wrap {
+    width: 42%;
+    height: 100%;
+    padding: 34px 0 34px 85px;
+}
+
+.scuba-gear-img-wrap img {
+    width: 100%;
+    height: 100%;
+}
+
+.scuba-gear-box-wrap {
+    width: 58%;
+    height: auto;
+    gap: 1%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.scuba-gear-box{
+    width: 49.5%;
+    height: auto;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    padding: 45px 45px 45px 45px;
+}
+
+.scuba-gear-txt {
+    width: 100%;
+    height: auto;
+}
+
+.scuba-gear-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.scuba-gear-list li {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.scuba-gear-list li p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 6px;
+    line-height: 1.6;
+}
+
+
+.license {
+    width: 100%;
+    height: 100%;
+    margin-top: 240px;
+    margin-bottom: 240px;
+    display: flex;
+}
+
+.license-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.license-text {
+    width: 33%;
+}
+
+
+.license-box-wrap {
+    width: 58%;
+}
+
+.license-box {
+    width: 100%;
+    height: auto;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    padding: 40px 30px;
+}
+
+.diverpath {
+    padding: 30px 10px;
+}
+
+.pre-view {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail {
+    display: none;
+    padding: 20px 0;
+}
+
+.arrow-down,
+.arrow-up {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.detail-cont {
+    display: flex;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.detailtitle {
+    font-size: 18px;
+}
+
+.wordbreak-none {
+    white-space: nowrap;
+}
+
+.wordbreak {
+    word-break: keep-all;
+}
+
+
+/* ===== 반응형 미디어 쿼리 ===== */
+
+/* 1280px: 구조 유지, 갭·여백 축소 */
+@media (max-width: 1280px) {
+    .big-title {
+        font-size: 150px;
+    }
+    .Scuba-diving-top {
+        margin-bottom: 160px;
+    }
+    .scuba-img-wrap {
+        margin-bottom: 160px;
+    }
+    .scuba-gear-img-wrap {
+        padding: 20px 0 20px 40px;
+    }
+    .scuba-gear-box {
+        padding: 30px 25px;
+    }
+    .license {
+        margin-top: 160px;
+        margin-bottom: 160px;
+    }
+}
+
+@media (max-width: 1155px) {
+
+    .scuba-img-wrap {
+        margin-top: 50px;
+    }
+}
+/* 1024px: scuba-cont-text / license-cont / scuba-gear-wrap → column */
+@media (max-width: 1024px) {
+    .big-title {
+        font-size: 110px;
+    }
+    .Scuba-diving-top {
+        margin-bottom: 120px;
+    }
+
+    .scuba-diving-top-img {
+        width: 100%;
+        margin-top: -30px;
+    }
+
+    /* scuba-contents: h3·scuba-text-wrap column */
+    .scuba-cont-text {
+        flex-direction: column;
+    }
+    .scuba-cont-text .en-title {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .scuba-text-wrap {
+        width: 100%;
+        height: auto;
+    }
+
+    .scuba-img-wrap {
+        margin-bottom: 120px;
+    }
+
+    /* scuba-gear: img-wrap · box-wrap column */
+    .scuba-gear-wrap {
+        flex-direction: column;
+    }
+    .scuba-gear-img-wrap {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .scuba-gear-img-wrap img {
+        width: 50%;
+    }
+    .scuba-gear-box-wrap {
+        width: 100%;
+    }
+
+    /* license: h3·p column */
+    .license {
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+    .license-cont {
+        flex-direction: column;
+    }
+    .license-text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .license-box-wrap {
+        width: 100%;
+    }
+}
+
+/* 768px: scuba-img-wrap만 column, 나머지 갭 축소 */
+@media (max-width: 768px) {
+    .big-title {
+        font-size: 80px;
+        letter-spacing: -3px;
+    }
+    .Scuba-diving-top {
+        margin-bottom: 80px;
+    }
+
+    .scuba-diving-top-img {
+        width: 100%;
+        margin-top: -20px;
+    }
+
+    .scuba-img-wrap {
+        flex-direction: column;
+        height: auto;
+        gap: 8px;
+        margin-bottom: 80px;
+    }
+    .scuba-img-wrap img {
+        width: 100%;
+    }
+    .scuba-gear-box {
+        padding: 24px 20px;
+    }
+    .license {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    .license-box {
+        padding: 30px 24px;
+    }
+}
+
+/* 600px 이하: 모두 column, 너비 100% */
+@media (max-width: 600px) {
+    .big-title {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+    .Scuba-diving-top {
+        height: auto;
+        margin-bottom: 60px;
+    }
+
+    .scuba-diving-top-img {
+        width: 100%;
+        margin-top: -15px;
+    }
+
+    .big-title {
+    font-size: 60px;
+    }
+
+    .scuba-cont-text {
+        flex-direction: column;
+    }
+    .scuba-cont-text .en-title {
+        width: 100%;
+    }
+    .scuba-text-wrap {
+        width: 100%;
+        height: auto;
+    }
+
+    .scuba-img-wrap {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 60px;
+    }
+    .scuba-img-wrap img {
+        width: 100%;
+    }
+
+    .scuba-gear-wrap {
+        flex-direction: column;
+    }
+    .scuba-gear-img-wrap {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .scuba-gear-img-wrap img {
+        width: 100%;
+    }
+    .scuba-gear-box-wrap {
+        width: 100%;
+        flex-direction: column;
+    }
+    .scuba-gear-box {
+        width: 100%;
+        padding: 24px 20px;
+    }
+
+    .license {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .license-cont {
+        flex-direction: column;
+    }
+    .license-text {
+        width: 100%;
+    }
+    .license-box-wrap {
+        width: 100%;
+    }
+}

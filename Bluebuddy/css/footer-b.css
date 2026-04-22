@@ -1,0 +1,120 @@
+@import 'common.css';
+
+/* footer css  */
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-top: 20px;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.inner-footer {
+    width: 100%;
+    background-color: #203EB5;
+    padding-top: 60px;
+    padding-bottom: 90px;
+}
+
+.footer-content {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-content > div {
+    height: 90px;
+}
+
+.footer-left h2 a {
+    display: block;
+    width: 240px;
+    height: 57px;
+    margin-bottom: 10px;
+}
+
+.footer-left h2 a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-left p,
+.footer-right a {
+    font-family: 'Noto Sans KR';
+    color: var(--white-color);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.sns-list {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    height: 55px;
+}
+
+.sns a {
+    display: block;
+}
+
+
+/* Animation */
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

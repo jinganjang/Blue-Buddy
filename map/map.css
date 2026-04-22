@@ -1,0 +1,326 @@
+/* 홈 메인용 인터랙티브 맵 — CodePen PURE CSS INTERACTIVE MAP 패턴(호버/포커스 전환) 참고 */
+
+.home-map-section {
+    position: relative;
+    overflow: visible;
+    padding: clamp(120px, 18vw, 200px) 0 clamp(48px, 8vw, 96px);
+    background-color: #030C22;
+    color: var(--white-color);
+}
+
+@media (max-width: 1440px) {
+    .home-map-section {
+        padding-bottom: clamp(56px, 9vw, 120px);
+    }
+}
+
+/* 인디케이터 ↔ 맵 경계: .diving-indicator-section::after 와 동일한 그라데이션 (50% 지점이 두 섹션 사이 선에 오도록) */
+.home-map-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: clamp(200px, 48vh, 640px);
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(rgba(9, 29, 83, 0) 0%, rgba(9, 29, 83, 1) 50%, rgba(9, 29, 83, 0) 100%);
+}
+
+.home-map-section .container.home-map-wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.home-map-title {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.home-map-section .home-map-title.en-title {
+    color: var(--white-color);
+}
+
+/* 맵 섹션 밖 웨이브 — 섹션 높이와 무관하게 이미지 높이·여백만 따로 조정 가능 */
+.home-map-wave2 {
+    width: 100%;
+    margin: 0;
+    margin-top: -1px;
+    padding: 0;
+    line-height: 0;
+}
+
+.home-map-wave2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.home-map-stage {
+    position: relative;
+    width: 100%;
+    max-width: min(1400px, 100%);
+    margin: 0 auto;
+    min-height: clamp(420px, 58vh, 720px);
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+    will-change: opacity, transform;
+}
+
+.home-map-section.is-inview .home-map-stage {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-map-stage {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+    }
+}
+
+.home-map-section .map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: clamp(420px, 58vh, 720px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.home-map-section .map-img {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    display: block;
+}
+
+/* 포인트 — 핀은 버튼으로 포커스 가능 (CodePen :focus 패턴 대체) */
+.home-map-section .map-point {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.home-map-section .map-pin-trigger {
+    display: grid;
+    place-items: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 50%;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.home-map-section .map-pin-trigger:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+.home-map-section .map-point:hover .map-pin-trigger,
+.home-map-section .map-point:focus-within .map-pin-trigger {
+    transform: scale(1.12);
+    filter: drop-shadow(0 6px 14px rgba(9, 29, 83, 0.35));
+}
+
+.home-map-section .pin {
+    width: clamp(26px, 2.2vw, 32px);
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+/* 정보 카드 — 부드러운 등장 */
+.home-map-section .info-box {
+    background-color: var(--white-color);
+    border-radius: 20px;
+    padding: clamp(24px, 2.5vw, 40px);
+    position: absolute;
+    width: min(400px, 36vw);
+    min-height: 200px;
+    box-shadow: 0 18px 48px rgba(9, 29, 83, 0.14);
+    border: 1px solid rgba(32, 62, 181, 0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        transform 0.35s ease;
+    transform: translate(-50%, 8px) scale(0.98);
+}
+
+.home-map-section .map-point:hover .info-box,
+.home-map-section .map-point:focus-within .info-box,
+.home-map-section .map-point .info-box:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0) scale(1);
+}
+
+.home-map-section .info-box .title {
+    font-size: clamp(20px, 1.6vw, 28px);
+    font-weight: 500;
+    color: var(--black-color);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.home-map-section .info-box .subtitle {
+    font-size: clamp(15px, 1.25vw, 18px);
+    font-weight: 300;
+    color: var(--black-color);
+    line-height: 160%;
+    opacity: 0.92;
+}
+
+.home-map-section .more-btn {
+    position: absolute;
+    right: clamp(12px, 1.2vw, 15px);
+    bottom: clamp(12px, 1.2vw, 15px);
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.home-map-section .more-btn:hover,
+.home-map-section .more-btn:focus-visible {
+    background: transparent;
+    transform: translateX(2px);
+}
+
+.home-map-section .more-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.home-map-section .more-btn img {
+    width: 40px;
+    height: auto;
+    display: block;
+}
+
+/* 호버 브리지 (원본 map.css 패턴 유지) */
+.home-map-section .map-point::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(400px, 36vw);
+    height: 280px;
+    bottom: 0;
+    z-index: -1;
+}
+
+.home-map-section .point-2::before {
+    width: min(400px, 36vw);
+    height: 160px;
+    top: 100%;
+    bottom: auto;
+}
+
+/* 핀 위치 (지도 비율 유지 시 %) */
+.home-map-section .point-1 {
+    top: 58%;
+    left: 28%;
+}
+
+.home-map-section .point-2 {
+    top: 48%;
+    left: 50%;
+}
+
+.home-map-section .point-3 {
+    top: 60%;
+    left: 73%;
+}
+
+/* 그레이트 블루홀 */
+.home-map-section .point-1 .info-box {
+    bottom: 130%;
+    left: auto;
+    right: -50px;
+    transform: translate(0, 8px) scale(0.98);
+}
+
+.home-map-section .point-1:hover .info-box,
+.home-map-section .point-1:focus-within .info-box,
+.home-map-section .point-1 .info-box:hover {
+    transform: translate(0, -10px) scale(1);
+}
+
+/* 샤크, 욜란다 리프 */
+.home-map-section .point-2 .info-box {
+    top: 140%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, 8px) scale(0.98);
+}
+
+.home-map-section .point-2:hover .info-box,
+.home-map-section .point-2:focus-within .info-box,
+.home-map-section .point-2 .info-box:hover {
+    transform: translate(-50%, 10px) scale(1);
+}
+
+/* 블루코너 */
+.home-map-section .point-3 .info-box {
+    bottom: 140%;
+    left: 50%;
+    transform: translate(-50%, 8px) scale(0.98);
+}
+
+.home-map-section .point-3:hover .info-box,
+.home-map-section .point-3:focus-within .info-box,
+.home-map-section .point-3 .info-box:hover {
+    transform: translate(-50%, -10px) scale(1);
+}
+
+/* 1280px 이하: 컴팩트 카드 · 지도 높이 조정 */
+@media (max-width: 1280px) {
+    .home-map-section .info-box {
+        width: min(340px, 42vw);
+        padding: 35px 35px 25px;
+        border-radius: 16px;
+    }
+
+    .home-map-section .map-container,
+    .home-map-stage {
+        min-height: clamp(380px, 52vh, 600px);
+    }
+
+    .home-map-section .map-point::before {
+        width: min(340px, 42vw);
+    }
+
+    .home-map-section .point-2::before {
+        width: min(340px, 42vw);
+    }
+}
+
+/* 1024px 이하: 맵 블록·웨이브 비표시 */
+@media (max-width: 1024px) {
+    .home-map-section,
+    .home-map-wave2 {
+        display: none !important;
+    }
+}

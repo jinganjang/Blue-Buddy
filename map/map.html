@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/reset/reset.min.css">
+    <link rel="stylesheet" href="../assets/css/common/common.css">
+    <link rel="stylesheet" href="./map.css">
+</head>
+
+<body>
+
+    <main>
+
+        <section class="home-map-section" id="dive-spots-map" aria-labelledby="home-map-title">
+            <div class="container home-map-wrap">
+                <h2 id="home-map-title" class="section-title home-map-title en-title">Dive Map</h2>
+                <div class="home-map-stage">
+                    <div class="map-container">
+                        <img src="../assets/images/map-img.webp" class="map-img" alt="" width="1400" height="700" decoding="async">
+
+                        <div class="map-point point-1">
+                            <button type="button" class="map-pin-trigger" aria-label="그레이트 블루홀 정보 보기">
+                                <img src="../assets/images/icon-pin.webp" class="pin" alt="" width="32" height="32">
+                            </button>
+                            <div class="info-box" role="region" aria-label="그레이트 블루홀">
+                                <p class="title">그레이트 블루홀</p>
+                                <p class="subtitle">
+                                    카리브해, 벨리즈<br>
+                                    세계에서 가장 아름다운 블루홀
+                                </p>
+                                <button type="button" class="more-btn" aria-label="그레이트 블루홀 자세히 보기">
+                                    <img src="../assets/images/icon-aroow-r.webp" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="map-point point-2">
+                            <button type="button" class="map-pin-trigger" aria-label="샤크, 욜란다 리프 정보 보기">
+                                <img src="../assets/images/icon-pin.webp" class="pin" alt="" width="32" height="32">
+                            </button>
+                            <div class="info-box" role="region" aria-label="샤크, 욜란다 리프">
+                                <p class="title">샤크, 욜란다 리프</p>
+                                <p class="subtitle">
+                                    홍해, 이집트<br>
+                                    화려한 산호정원과 수직 절벽
+                                </p>
+                                <button type="button" class="more-btn" aria-label="샤크, 욜란다 리프 자세히 보기">
+                                    <img src="../assets/images/icon-aroow-r.webp" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="map-point point-3">
+                            <button type="button" class="map-pin-trigger" aria-label="블루코너 정보 보기">
+                                <img src="../assets/images/icon-pin.webp" class="pin" alt="" width="32" height="32">
+                            </button>
+                            <div class="info-box" role="region" aria-label="블루코너">
+                                <p class="title">블루코너</p>
+                                <p class="subtitle">
+                                    서태평양, 팔라우<br>
+                                    야생의 역동적인 생동감, 상어의 군무
+                                </p>
+                                <button type="button" class="more-btn" aria-label="블루코너 자세히 보기">
+                                    <img src="../assets/images/icon-aroow-r.webp" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="home-map-wave2" aria-hidden="true">
+            <img src="../assets/images/bg-wave2.webp" alt="" width="1920" height="200" decoding="async">
+        </div>
+
+    </main>
+
+    <script src="./map.js"></script>
+
+</body>
+
+</html>
