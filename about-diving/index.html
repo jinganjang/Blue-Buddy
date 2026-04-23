@@ -48,21 +48,32 @@
     <!-- 구글 서치콘솔 -->
     <!-- <meta name="google-site-verification" content="Di_nPPle_ReqRTUFP4r6TSHClg8lrpVMVn7oZD_Fdis" /> -->
 
-    
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/reset/reset.min.css">
-    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/common/common.css">
     <link rel="stylesheet" href="./assets/css/footer-w.css">
     <link rel="stylesheet" href="./assets/css/about-diving.css">
 </head>
 
-<body>
+<body class="home-page">
 
     <!-- header  -->
     <header class="header container">
         <h1 class="logo">
             <a href="../index.html">
-                <img src="../assets/images/logo-w.webp" alt="logo">
+                <img
+                    src="../assets/images/logo-w.webp"
+                    data-logo-dark="../assets/images/logo-w.webp"
+                    data-logo-light="../assets/images/logo.webp"
+                    alt="logo"
+                >
             </a>
         </h1>
         <div class="menu-bar">
@@ -76,7 +87,7 @@
                 </a>
             </div>
             <a href="#" class="menu-bar-mo">
-                <img src="../assets/images/menu-alt-2.webp" alt="menu">
+                <img src="../assets/images/menu-alt-2.webp" data-menu-dark="../assets/images/menu-alt-2.webp" data-menu-light="../assets/images/menu-alt-2-b.webp" alt="menu">
             </a>
         </div>
     </header>
@@ -137,9 +148,9 @@
         </div>
     </nav>
     <main>
-        <section class="hero">
+        <section class="hero about-diving-hero">
             <div class="hero-inner">
-                <h1>
+                <h1 class="en-title">
                     Discover the Unseen<br />
                     70% of Our Planet.
                 </h1>
@@ -156,8 +167,183 @@
             </div>
         </section>
 
-        <section class="breaking-the-fear">
+        <section class="find-blue">
+            <div class="inner find-blue-inner">
 
+                <!-- 좌측 타이틀 (고정 영역) -->
+                <div class="find-blue-left">
+                    <h2 class="en-title">Breaking the Fear</h2>
+                </div>
+
+                <!-- 우측 콘텐츠 -->
+                <div class="find-blue-right">
+
+                    <div class="find-blue-text">
+                        <p class="main-text">
+                            수영을 못해도 괜찮을까? <br>
+                            숨은 어떻게 쉬지?
+                        </p>
+
+                        <p class="sub-text">
+                            고민은 잠시 내려놓으셔도 좋습니다. <br>
+                            모든 전설적인 다이버들도 당신과 같은 궁금증에서 시작했습니다. <br>
+                            물과 친하지 않아도 괜찮아요, <span>바다는 누구에게나 열려 있으니까요.</span>
+                        </p>
+                    </div>
+
+                    <ul class="accordion-list">
+                        <li class="accordion-item active">
+                            <div class="accordion-header">
+                                <h3 class="title">수영을 못하는데 다이빙을 할 수 있을까요?</h3>
+                                <div class="btn-arrow"><img src="./assets/images/btn-icon1-w.webp"></div>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="inner-content">
+                                    <p class="subtitle">다이빙은 '헤엄'이 아니라 '적응'과 '호흡'의 스포츠입니다.</p>
+                                    <div class="guide-box">
+                                        <strong class="card-title">장비의 힘:</strong>
+                                        <p class="subtitle">수영은 맨몸으로 물을 이겨내야 하지만, 다이빙은 전용 장비의 도움을 받습니다. 오리발(Fin)은
+                                            적은
+                                            힘으로도 강력한 추진력을 만들어주고, 마스크(Mask)는 물속에서도 지상처럼 선명한 시야를 보장합니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">부력의 마법:</strong>
+                                        <p class="subtitle">물속에서는 부력 조절 기구(BCD)나 호흡을 통해 몸을 자유롭게 띄우거나 가라앉힐 수 있습니다.
+                                            가만히
+                                            있어도 물에 둥둥 뜰 수 있다는 사실을 체감하는 순간, 물에 대한 공포는 금세 경이로움으로 바뀝니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">수영 실력보다 중요한 것:</strong>
+                                        <p class="subtitle">다이빙에서 필요한 것은 빠른 속도가 아니라 물속에서의 편안함입니다. 수영 선수처럼 팔을 젓지
+                                            않아도,
+                                            장비와 하나가 되는 법만 익히면 누구나 바다를 유영할 수 있습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <div class="accordion-header">
+                                <h3 class="title">코에 물이 들어오거나 숨이 막히면 어쩌죠?</h3>
+                                <div class="btn-arrow"><img src="./assets/images/btn-icon1-w.webp"></div>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="inner-content">
+                                    <p class="subtitle">입으로 하는 '가장 정직한 호흡'을 배우게 됩니다.</p>
+                                    <div class="guide-box">
+                                        <strong class="card-title">마스크의 완벽한 보호:</strong>
+                                        <p class="subtitle">다이빙 전용 마스크는 눈뿐만 아니라 코까지 실리콘으로 부드럽고 밀착되게 감싸줍니다. 코로 물이
+                                            들어올
+                                            틈이 없으니 안심하세요.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">호흡의 자유:</strong>
+                                        <p class="subtitle">스쿠버 다이빙은 호흡기(Regulator)를 통해 지상에서처럼 끊김 없이 숨을 쉴 수 있고,
+                                            프리다이빙은
+                                            스노클(Snorkel)을 통해 수면에 엎드린 채 편안하게 호흡합니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">평온의 리듬:</strong>
+                                        <p class="subtitle">입으로 천천히, 깊게 숨을 들이마시고 내뱉는 리듬에 집중해 보세요. 어느덧 거친 숨소리는
+                                            사라지고,
+                                            세상에서 가장 고요하고 평온한 나만의 명상 시간을 갖게 될 것입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <div class="accordion-header">
+                                <h3 class="title">다이빙은 위험하고 어려운 운동 아닌가요?</h3>
+                                <div class="btn-arrow"><img src="./assets/images/btn-icon1-w.webp"></div>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="inner-content">
+                                    <p class="subtitle">체력보다 '심리적 여유'와 '함께하는 신뢰'가 핵심입니다.</p>
+                                    <div class="guide-box">
+                                        <strong class="card-title">버디 시스템(Buddy System):</strong>
+                                        <p class="subtitle">다이빙은 절대 혼자 하는 고립된 운동이 아닙니다. 숙련된 강사나 믿음직한 버디(Buddy)가 항상
+                                            곁에서
+                                            당신의 공기 잔량과 상태를 체크합니다. 서로를 돌보는 이 시스템이 다이빙을 가장 안전한 레저로 만듭니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">단계별 적응 교육:</strong>
+                                        <p class="subtitle">처음부터 깊은 바다에 빠뜨리지 않습니다. 발이 닿는 얕은 수영장에서 물과 친해지는 법부터 차근차근
+                                            배운
+                                            뒤, 준비가 되었을 때 비로소 푸른 바다로 나갑니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">바다의 리듬에 맡기기:</strong>
+                                        <p class="subtitle">다이빙은 격렬하게 움직이는 운동이 아닙니다. 오히려 힘을 빼고 바다의 흐름에 몸을 맡길 때 가장
+                                            즐겁습니다. 강박을 내려놓고 자연의 속도에 맞춰 움직이는 법을 배우는 힐링의 과정입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <div class="accordion-header">
+                                <h3 class="title">귀가 아프면 어쩌죠?</h3>
+                                <div class="btn-arrow"><img src="./assets/images/btn-icon1-w.webp"></div>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="inner-content">
+                                    <p class="subtitle">비행기를 탔을 때처럼 '압력 조절'만 해주면 통증 없이 편안합니다.</p>
+                                    <div class="guide-box">
+                                        <strong class="card-title">이퀄라이징(Equalizing):</strong>
+                                        <p class="subtitle">수심이 깊어지면 수압 때문에 귀가 먹먹해질 수 있지만, 코를 잡고 가볍게 '흥!' 하고 바람을
+                                            넣어주는
+                                            간단한 동작 하나면 즉시 해결됩니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">아프기 전에 미리:</strong>
+                                        <p class="subtitle">통증이 느껴진 후에 하는 것이 아니라, 물속으로 내려가기 시작함과 동시에 미리미리 이퀄라이징을
+                                            해주는
+                                            습관을 배웁니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">천천히 내려가기:</strong>
+                                        <p class="subtitle">귀가 예민하다면 속도를 늦추면 됩니다. 강사와 버디는 당신이 편안해질 때까지 충분히 기다려 줄
+                                            준비가
+                                            되어 있습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <div class="accordion-header">
+                                <h3 class="title">물속에서 정신을 잃거나 사고가 나면 어쩌죠?</h3>
+                                <div class="btn-arrow"><img src="./assets/images/btn-icon1-w.webp"></div>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="inner-content">
+                                    <p class="subtitle">다이빙은 철저한 '안전 시스템' 위에서 이루어지는 레저입니다.</p>
+                                    <div class="guide-box">
+                                        <strong class="card-title">2인 1조 버디 시스템:</strong>
+                                        <p class="subtitle">다이빙의 황금률은 '절대 혼자 들어가지 않는다'는 것입니다. 숙련된 강사와 당신을 지켜줄
+                                            버디(Buddy)가 항상 1m 이내 거리에서 당신의 눈을 맞추고 호흡과 상태를 체크합니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">사전 체크와 교육:</strong>
+                                        <p class="subtitle">물에 들어가기 전, 장비에 이상은 없는지 서로의 상태는 어떤지 확인하는 '버디 체크'를 반드시
+                                            거칩니다.
+                                            또한 돌발 상황에 대비한 긴급 대응 기술을 수영장에서 완벽히 익힌 뒤에야 바다로 나갑니다.</p>
+                                    </div>
+                                    <div class="guide-box">
+                                        <strong class="card-title">신호의 약속:</strong>
+                                        <p class="subtitle">물속에서는 말을 할 수 없기에 명확한 수신호로 소통합니다. 조금이라도 불편함이 느껴지면 즉시
+                                            신호를
+                                            보내고, 즉각적인 도움을 받을 수 있는 체계적인 환경이 갖춰져 있습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
         </section>
 
         <section class="find-blue">
@@ -165,7 +351,7 @@
 
                 <!-- 좌측 타이틀 (고정 영역) -->
                 <div class="find-blue-left">
-                    <h2>Find your Blue</h2>
+                    <h2 class="en-title">Find your Blue</h2>
                 </div>
 
                 <!-- 우측 콘텐츠 -->
@@ -206,7 +392,7 @@
 
                 <!-- 좌측 타이틀 (고정) -->
                 <div class="into-blue-left">
-                    <h2>Into the Blue</h2>
+                    <h2 class="en-title">Into the Blue</h2>
                 </div>
 
                 <!-- 우측 콘텐츠 -->
@@ -280,7 +466,7 @@
 
                 <!-- 좌측 타이틀 (고정) -->
                 <div class="underwater-left">
-                    <h2>UnderWater Adventure</h2>
+                    <h2 class="en-title">UnderWater Adventure</h2>
                 </div>
 
                 <!-- 우측 텍스트 -->
@@ -309,67 +495,97 @@
 
                 <!-- 타이틀 영역 -->
                 <div class="attractions-header">
-                    <h2>Choice your Attractions</h2>
+                    <h2 class="en-title">Choice your Attractions</h2>
                     <p>
                         4가지 테마와 난이도로 구별된 바닷 속 어트랙션을 탐험해 보세요.
                     </p>
                 </div>
 
                 <!-- 슬라이드 영역 -->
-                <div class="attractions-slider">
+                <div class="swiper attractions-slider">
+                    <div class="swiper-wrapper">
 
-                    <!-- 카드 12개 -->
+                        <!-- 카드 12개 -->
 
-                    <div class="attraction-card"><img src="./assets/images/card (1).webp">
-                        <h3>WALL(월)</h3>
-                        <p>수직으로 깎아지른 듯한 수중 절벽을 따라 이동하는 방식입니다. 끝이 보이지 않는 깊은 바다(Deep Blue)의 웅장함을 느낄 수 있으며, 절벽에 붙어 사는 화려한
-                            연산호와 부채산호를 관찰하기 좋습니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (2).webp">
-                        <h3>DROP-OFF(드롭오프)</h3>
-                        <p>얕은 수심의 산호초 지대(리프)가 끝나고 갑자기 수직으로 깊어지는 경계 지점입니다. 대형 어종들이 자주 출몰하는 길목이기도 합니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (3).webp">
-                        <h3>CHANNEL(채널)</h3>
-                        <p>두 개의 섬 사이나, 거대한 산호초 지형(리프) 사이가 좁게 터져 있어 빠른 물길이 형성된 지형을 말합니다. 조류가 강할수록 더 크고 멋진 생물들을 만날 확률이
-                            높습니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (4).webp">
-                        <h3>Arch(아치)</h3>
-                        <p>바위가 가운데가 뚫린 무지개 모양의 문처럼 생긴 지형입니다. 아치 아래를 통과하면서 멋진 사진을 남기기 좋아 인기가 많습니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (5).webp">
-                        <h3>TUNNEL(터널)</h3>
-                        <p>입구와 출구가 연결된 긴 통로 형태의 지형입니다. 터널 안을 통과할 때의 스릴과 출구 쪽에서 들어오는 푸른 빛이 환상적입니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (6).webp">
-                        <h3>CANYON(협곡)</h3>
-                        <p>양옆으로 높은 바위 벽이 서 있어 마치 협곡 사이를 지나가는 듯한 지형입니다. 지형이 만들어내는 신비로운 풍경과 빛의 내림을 즐길 수 있습니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (7).webp">
-                        <h3>SLOPE(슬로프)</h3>
-                        <p>경사면 지형입니다. 완만하게 깊어지기 때문에 초보자들이 심리적으로 안정감을 느끼며 다이빙하기 좋고, 모래나 작은 바위 사이에 숨은 생물들을 찾기에 적합합니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (8).webp">
-                        <h3>SAND(샌드)</h3>
-                        <p>바닥이 고운 모래로 된 지형입니다. 시야가 탁 트여 있으며, 모래 속에 몸을 숨기고 사는 가오리나 가자미 같은 생물들을 관찰할 수 있습니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (9).webp">
-                        <h3>GARDEN(가든)</h3>
-                        <p>수천 년간 자라난 산호 군락지. 바다의 열대우림이라 불릴 만큼 가장 화려한 색채를 자랑합니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (10).webp">
-                        <h3>CAVE(동굴)</h3>
-                        <p>빛이 전혀 들지 않는 깊은 동굴 안쪽까지 들어가는 전문적인 다이빙입니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (11).webp">
-                        <h3>CAVERN(캐번)</h3>
-                        <p>동굴 입구에서 외부 빛이 보이는 정도의 밝은 구역을 탐험하는 것입니다.</p>
-                    </div>
-                    <div class="attraction-card"><img src="./assets/images/card (12).webp">
-                        <h3>Wreck(렉)</h3>
-                        <p>침몰한 배(선박), 비행기, 자동차 등 인공적인 구조물을 탐험하는 침선 다이빙입니다. 역사의 흔적을 볼 수 있고, 구조물이 인공 어초 역할을 하여 다양한 생물이
-                            서식합니다.</p>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_1.webp">
+                                <h3>WALL(월)</h3>
+                                <p>수직으로 깎아지른 듯한 수중 절벽을 따라 이동하는 방식입니다. 끝이 보이지 않는 깊은 바다(Deep Blue)의 웅장함을 느낄 수 있으며, 절벽에 붙어
+                                    사는 화려한
+                                    연산호와 부채산호를 관찰하기 좋습니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_2.webp">
+                                <h3>DROP-OFF(드롭오프)</h3>
+                                <p>얕은 수심의 산호초 지대(리프)가 끝나고 갑자기 수직으로 깊어지는 경계 지점입니다. 대형 어종들이 자주 출몰하는 길목이기도 합니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_3.webp">
+                                <h3>CHANNEL(채널)</h3>
+                                <p>두 개의 섬 사이나, 거대한 산호초 지형(리프) 사이가 좁게 터져 있어 빠른 물길이 형성된 지형을 말합니다. 조류가 강할수록 더 크고 멋진 생물들을 만날
+                                    확률이
+                                    높습니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_4.webp">
+                                <h3>Arch(아치)</h3>
+                                <p>바위가 가운데가 뚫린 무지개 모양의 문처럼 생긴 지형입니다. 아치 아래를 통과하면서 멋진 사진을 남기기 좋아 인기가 많습니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_5.webp">
+                                <h3>TUNNEL(터널)</h3>
+                                <p>입구와 출구가 연결된 긴 통로 형태의 지형입니다. 터널 안을 통과할 때의 스릴과 출구 쪽에서 들어오는 푸른 빛이 환상적입니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_6.webp">
+                                <h3>CANYON(협곡)</h3>
+                                <p>양옆으로 높은 바위 벽이 서 있어 마치 협곡 사이를 지나가는 듯한 지형입니다. 지형이 만들어내는 신비로운 풍경과 빛의 내림을 즐길 수 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_7.webp">
+                                <h3>SLOPE(슬로프)</h3>
+                                <p>경사면 지형입니다. 완만하게 깊어지기 때문에 초보자들이 심리적으로 안정감을 느끼며 다이빙하기 좋고, 모래나 작은 바위 사이에 숨은 생물들을 찾기에
+                                    적합합니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_8.webp">
+                                <h3>SAND(샌드)</h3>
+                                <p>바닥이 고운 모래로 된 지형입니다. 시야가 탁 트여 있으며, 모래 속에 몸을 숨기고 사는 가오리나 가자미 같은 생물들을 관찰할 수 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_9.webp">
+                                <h3>GARDEN(가든)</h3>
+                                <p>수천 년간 자라난 산호 군락지. 바다의 열대우림이라 불릴 만큼 가장 화려한 색채를 자랑합니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_10.webp">
+                                <h3>CAVE(동굴)</h3>
+                                <p>빛이 전혀 들지 않는 깊은 동굴 안쪽까지 들어가는 전문적인 다이빙입니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_11.webp">
+                                <h3>CAVERN(캐번)</h3>
+                                <p>동굴 입구에서 외부 빛이 보이는 정도의 밝은 구역을 탐험하는 것입니다.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="attraction-card"><img src="./assets/images/card_12.webp">
+                                <h3>Wreck(렉)</h3>
+                                <p>침몰한 배(선박), 비행기, 자동차 등 인공적인 구조물을 탐험하는 침선 다이빙입니다. 역사의 흔적을 볼 수 있고, 구조물이 인공 어초 역할을 하여 다양한
+                                    생물이
+                                    서식합니다.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -378,7 +594,7 @@
 
     <!-- footer  -->
     <div class="footer">
-        <div class="wave-box">
+        <div>
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                 <defs>
@@ -397,8 +613,8 @@
             <div class="footer-content container">
                 <div class="footer-left">
                     <h2>
-                        <a href="../index.html">
-                            <img src="../assets/images/logo-txt.webp" alt="footer-logo">
+                        <a href="#">
+                            <img src="./assets/images/logo-txt.webp" alt="footer-logo">
                         </a>
                     </h2>
                     <p class="copyright">ⓒ Copyright by JinGanJang</p>
@@ -410,12 +626,12 @@
                     <ul class="sns-list">
                         <li class="sns">
                             <a href="#">
-                                <img src="../assets/images/sns-facebook.webp" alt="facebook">
+                                <img src="./assets/images/sns-facebook.webp" alt="facebook">
                             </a>
                         </li>
                         <li class="sns">
                             <a href="#">
-                                <img src="../assets/images/sns-instagram.webp" alt="instagram">
+                                <img src="./assets/images/sns-instagram.webp" alt="instagram">
                             </a>
                         </li>
                     </ul>
@@ -424,6 +640,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../assets/js/menu.js"></script>
     <script src="./assets/js/about-diving.js"></script>
 </body>

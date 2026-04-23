@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".header");
+    const heroSection = document.querySelector(".hero-video-section, .hero-section, .hero");
+    const logoImage = header ? header.querySelector(".logo img") : null;
+    const menuMoImage = header ? header.querySelector(".menu-bar-mo img") : null;
     const menuButtons = document.querySelectorAll(".menu-btn, .menu-bar-mo");
     const menu = document.querySelector(".global-menu");
     const submenuToggle = document.querySelector(".submenu-toggle");
@@ -71,4 +75,35 @@ document.addEventListener("DOMContentLoaded", function () {
             closeMenu();
         }
     });
+
+    // 지정 페이지에서 hero를 벗어나면 헤더 배경 노출
+    if (header && heroSection && document.body.classList.contains("home-page")) {
+        const logoDark =
+            (logoImage && logoImage.getAttribute("data-logo-dark")) ||
+            (logoImage ? logoImage.getAttribute("src") : null);
+        const logoLight =
+            (logoImage && logoImage.getAttribute("data-logo-light")) ||
+            (logoDark ? logoDark.replace("logo-w.webp", "logo.webp") : null);
+        const menuMoDark =
+            (menuMoImage && menuMoImage.getAttribute("data-menu-dark")) ||
+            (menuMoImage ? menuMoImage.getAttribute("src") : null);
+        const menuMoLight =
+            (menuMoImage && menuMoImage.getAttribute("data-menu-light")) ||
+            (menuMoDark ? menuMoDark.replace("menu-alt-2.webp", "menu-alt-2-b.webp") : null);
+
+        const onScroll = function () {
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            const isLightBg = heroBottom <= 0;
+            header.classList.toggle("is-scrolled", isLightBg);
+            if (logoImage && logoDark && logoLight) {
+                logoImage.setAttribute("src", isLightBg ? logoLight : logoDark);
+            }
+            if (menuMoImage && menuMoDark && menuMoLight) {
+                menuMoImage.setAttribute("src", isLightBg ? menuMoLight : menuMoDark);
+            }
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll, { passive: true });
+        onScroll();
+    }
 });

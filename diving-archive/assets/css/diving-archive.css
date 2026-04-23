@@ -1,12 +1,20 @@
 /* common.css는 index/detail에서 별도 링크 */
 
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 120;
+}
+
 /* ---------- Hero (필터·그리드와 독립된 상단 영역) ---------- */
 .diving-archive-page {
     overflow-x: hidden;
 }
 
 .diving-archive-main-wrap {
-    padding-top: 0;
+    padding-top: 80px;
 }
 
 .archive-hero {
@@ -124,9 +132,9 @@
 
 .archive-hero-desc {
     color: rgba(255, 255, 255, 0.9) !important;
-    max-width: 52ch;
     margin-top: 22px;
     line-height: 1.65;
+    white-space: pre-line;
 }
 
 /* READ ME: archive-hero-inner 높이 기준 세로 중앙 (positioning은 inner padding 박스 기준) */
@@ -314,7 +322,14 @@
     background: #fff;
     border-radius: clamp(18px, 2vw, 24px);
     box-shadow: 0 10px 36px var(--gray-color);
+    border: 2px solid transparent;
     overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.diving-archive-section .archive-card.is-active {
+    border-color: rgba(32, 62, 181, 0.9);
+    box-shadow: 0 16px 40px rgba(32, 62, 181, 0.14);
 }
 
 .diving-archive-section .archive-card a {
@@ -372,6 +387,7 @@
 
 .diving-archive-section .archive-card .card-txt-wrap .desc {
     color: var(--black-color);
+    white-space: pre-line;
 }
 
 .diving-archive-section .archive-card .archive-image-wrap {

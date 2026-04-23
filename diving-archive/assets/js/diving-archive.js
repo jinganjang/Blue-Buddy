@@ -10,6 +10,7 @@
     var filterButtons = document.querySelectorAll('.archive-filter-btn');
 
     var currentFilter = 'all';
+    var selectedPostId = null;
 
     function getVisiblePosts() {
         if (currentFilter === 'all') return posts.slice();
@@ -39,8 +40,19 @@
         }
         if (heroDesc) heroDesc.textContent = post.excerpt || '';
         if (heroRead) {
-            heroRead.href = 'detail.html?id=' + encodeURIComponent(post.id);
+            heroRead.href = post.url || ('detail.html?id=' + encodeURIComponent(post.id));
         }
+        selectedPostId = post.id || null;
+        syncActiveCard();
+    }
+
+    function syncActiveCard() {
+        if (!grid) return;
+        var cards = grid.querySelectorAll('.archive-card');
+        cards.forEach(function (card) {
+            var isActive = card.dataset.postId === selectedPostId;
+            card.classList.toggle('is-active', isActive);
+        });
     }
 
     function renderGrid() {
@@ -54,11 +66,16 @@
             art.dataset.level = post.level;
 
             var a = document.createElement('a');
-            a.href = 'detail.html?id=' + encodeURIComponent(post.id);
+            a.href = '#archive-hero';
+            a.className = 'archive-card-trigger';
+            a.setAttribute('aria-label', post.titleKo + ' 상세 내용 상단에서 보기');
             a.addEventListener('click', function (e) {
-                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
                 e.preventDefault();
                 applyHero(post);
+                var hero = document.getElementById('archive-hero');
+                if (hero) {
+                    hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
 
             var txt = document.createElement('div');
@@ -90,7 +107,10 @@
             grid.appendChild(art);
         });
 
-        var first = visible[0];
+        var selectedVisible = visible.find(function (p) {
+            return p.id === selectedPostId;
+        });
+        var first = selectedVisible || visible[0];
         if (first) applyHero(first);
     }
 

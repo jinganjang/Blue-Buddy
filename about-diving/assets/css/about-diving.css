@@ -1,11 +1,15 @@
-@import 'common.css';
-@import 'footer-w.css';
+/* @import 'common.css'; */
+/* @import 'footer-w.css'; */
 
-body {
+/* body {
     line-height: 1.6;
     font-family: 'Noto Sans KR';
     color: var(--black-color);
 }
+
+.title {
+    font-family: 'poppins';
+} */
 
 .inner {
     margin-left: 120px;
@@ -43,16 +47,19 @@ body {
     /* Medium */
     line-height: 1;
     margin-bottom: 24px;
-    /* font-family: ; */
+    color: var(--white-color);
+    max-width: initial;
 }
 
 /* 서브 타이틀 */
-.sub-title {
+.about-diving-hero .sub-title {
+    font-family: 'Poppins';
     font-size: 24px;
     font-weight: 400;
     /* Regular */
     line-height: 1.6;
     margin-bottom: 80px;
+    
 }
 
 /* 설명 텍스트 */
@@ -62,6 +69,12 @@ body {
     /* DemiLight */
     line-height: 1.6;
 }
+
+.en-title {
+    max-width: 672px;
+}
+
+
 
 /* Find Your Blue */
 .find-blue {
@@ -84,7 +97,7 @@ body {
 
 .find-blue-left h2 {
     font-size: 72px;
-    font-weight: 500;
+    font-weight: 400;
     color: #203EB5;
 }
 
@@ -143,13 +156,15 @@ body {
 }
 
 .card-title {
-    position: absolute;
     left: 20px;
     bottom: 20px;
-    color: #ffffff;
     font-size: 18px;
     font-weight: 500;
     font-family: 'Noto Sans KR', sans-serif;
+}
+
+.sub-text > span {
+    font-weight: 500;
 }
 
 /* Into the Blue */
@@ -336,11 +351,12 @@ body {
 
 /* 슬라이더 */
 .attractions-slider {
-    display: flex;
-    gap: 50px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    /* Swiper가 처리하므로 flex, gap, overflow 제거 */
     padding-bottom: 20px;
+}
+
+.attractions-slider .swiper-slide {
+    width: auto; /* 카드 너비 유지 */
 }
 
 .attractions-slider::-webkit-scrollbar {
@@ -351,13 +367,9 @@ body {
 .attraction-card {
     width: 480px;
     height: 572px;
-    flex: 0 0 auto;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     padding: 24px;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
 }
 
 /* 이미지 */
@@ -860,4 +872,314 @@ body {
         gap: 16px;
     }
 
+}
+
+/* --- BiBy Guide 섹션 --- */
+.biby-guide-section {
+    width: 100%;
+    min-height: 1982px;
+    background: url('../images/bg-wave.png') no-repeat center center;
+    background-size: cover;
+    padding: 160px 0;
+    margin-top: 180px;
+}
+
+.biby-guide-section .container {
+    padding-top: 180px;
+}
+
+.white-text {
+    color: var(--white-color) !important;
+}
+
+.biby-guide-section .en-title {
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.faq-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.faq-toggle img {
+    width: 32px;
+}
+
+.faq-body {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.faq-content-box {
+    margin-top: 30px;
+}
+
+.faq-content-box .card-title {
+    margin-bottom: 10px;
+}
+
+.faq-item:not(.is-open) .faq-body {
+    display: none;
+}
+
+/* --- BiBy Guide 섹션 --- */
+.biby-guide-section {
+    width: 100%;
+    min-height: 1982px;
+    background: url('../images/bg-wave.png') no-repeat center center;
+    background-size: cover;
+    padding: 160px 0;
+}
+
+.white {
+    color: var(--white-color) !important;
+}
+
+.biby-guide-section .en-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.accordion-list {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+.accordion-item:hover {
+    background: #f2f2f2;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 40px;
+    cursor: pointer;
+}
+
+.accordion-header .title {
+    font-size: clamp(24px, 1.4583vw, 28px);
+    font-weight: 500;
+}
+
+.btn-arrow {
+    width: 44px;
+    height: 44px;
+    transition: transform 0.4s ease;
+}
+
+.btn-arrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inner-content {
+    padding: 0 40px 50px 40px;
+    border-top: 1px solid #f2f2f2;
+    /* padding-top: 40px; */
+}
+.inner-content .subtitle {
+    font-size: 18px;
+}
+
+.guide-box {
+    margin-top: 35px;
+}
+
+.guide-box .card-title {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* --- JS 활성화 --- */
+.accordion-item.active .accordion-body {
+    max-height: 1200px;
+}
+
+.accordion-item.active .btn-arrow {
+    transform: rotate(180deg);
+}
+
+.accordion-item.active {
+    background: #f2f2f2;
+}
+
+
+/* --- Desktop & Laptop (1280px) --- */
+@media screen and (max-width: 1280px) {
+
+    /* 4. BiBy Guide 섹션 (아코디언 영역) */
+    .biby-guide-section {
+        min-height: auto;
+        /* 고정 높이 해제하여 유연하게 대응 */
+        padding: 100px 0;
+        background-attachment: scroll;
+        /* 모바일/태블릿 성능 고려 */
+    }
+
+    .accordion-list {
+        max-width: 1000px;
+        /* 아코디언 너비 소폭 축소 */
+    }
+
+    .accordion-header {
+        padding: 25px 30px;
+    }
+
+    .accordion-header .title {
+        font-size: 28px;
+        /* 질문 타이틀 크기 조정 */
+    }
+
+    .inner-content {
+        padding: 0 30px 40px 30px;
+    }
+
+    .btn-arrow {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* --- Tablet Landscape (1024px) --- */
+@media screen and (max-width: 1024px) {
+
+    /* 4. BiBy Guide 섹션 (아코디언) */
+    .biby-guide-section {
+        padding: 80px 0;
+    }
+
+    .accordion-list {
+        max-width: 90%;
+        /* 화면 대비 비율로 조정 */
+    }
+
+    .accordion-header {
+        padding: 20px 25px;
+    }
+
+    .accordion-header .title {
+        font-size: 24px;
+        /* 질문 크기 축소 */
+    }
+
+    .inner-content {
+        padding: 0 25px 35px 25px;
+    }
+
+    .inner-content .subtitle {
+        font-size: 18px;
+    }
+
+    .guide-box .card-title {
+        font-size: 18px;
+    }
+}
+
+/* --- Tablet Portrait (768px) --- */
+@media screen and (max-width: 768px) {
+
+    /* 4. BiBy Guide 섹션 (아코디언) */
+    .biby-guide-section {
+        background: url('../images/bg-wave-768.png') no-repeat center center;
+        background-size: cover;
+
+        padding: 80px 0 0 0;
+        min-height: auto;
+    }
+
+    .biby-guide-section {
+        padding: 60px 0;
+        margin-top: 80px;
+    }
+
+
+    .accordion-header .title {
+        font-size: 20px;
+        /* 질문 폰트 축소 */
+    }
+
+    .inner-content .subtitle,
+    .guide-box .card-title {
+        font-size: 16px;
+        /* 내용 폰트 축소 */
+    }
+
+}
+
+/* --- Mobile Portrait (402px) --- */
+@media screen and (max-width: 402px) {
+
+    /* 4. BiBy Guide 섹션 (배경 및 아코디언) */
+    .biby-guide-section {
+        background: url('../images/bg-wave-402.png') no-repeat center center;
+        background-size: cover;
+
+        min-height: none;
+    }
+
+    .biby-guide-section {
+        padding: 50px 0;
+        /* 모바일용 배경이 있다면 여기서 교체 */
+    }
+
+    .accordion-list {
+        max-width: 95%;
+    }
+
+    .accordion-header {
+        padding: 15px;
+    }
+
+    .accordion-header .title {
+        font-size: 16px;
+        /* 질문 폰트 모바일화 */
+    }
+
+    .inner-content {
+        padding: 0 15px 25px 15px;
+    }
 }

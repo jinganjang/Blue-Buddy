@@ -353,6 +353,35 @@ body {
     justify-content: space-between;
 }
 
+/* 홈: hero 이탈 후 헤더 배경 표시 */
+.home-page .header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 120;
+    isolation: isolate;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, border-radius 0.2s ease;
+}
+
+.home-page .header.is-scrolled {
+    background-color: transparent;
+}
+
+.home-page .header.is-scrolled::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 20px rgba(9, 29, 83, 0.08);
+    z-index: -1;
+    pointer-events: none;
+}
+
 .logo a {
     display: block;
     width: clamp(45px, 4.5vw, 60px);

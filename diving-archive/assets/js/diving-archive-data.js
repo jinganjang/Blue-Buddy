@@ -6,6 +6,7 @@
 window.DIVING_ARCHIVE_POSTS = [
     {
         id: 'koh-tao',
+        url: '../posting/kotao.html',
         level: 'beginner',
         badgeLevel: 'Beginner',
         date: '25.12.18',
@@ -14,12 +15,13 @@ window.DIVING_ARCHIVE_POSTS = [
         titleEn: 'Koh Tao, Thailand',
         heroImage: '../assets/images/koh tau.webp',
         excerpt:
-            '소규모 다이브 샵과 코스가 밀집한 섬으로, 첫 오픈워터·어드밴스 로그를 쌓기 좋은 목적지입니다. 매크로 포인트와 산호 슬로프가 균형 있게 펼쳐집니다.',
+            '소규모 다이브 샵과 코스가 밀집한 섬으로, 첫 오픈워터·어드밴스 로그를 쌓기 좋은 목적지입니다.\n매크로 포인트와 산호 슬로프가 균형 있게 펼쳐집니다.',
         body:
             '코타오는 태국만에서도 다이빙 교육 인프라가 잘 갖춰져 있어 예산과 일정 조절이 쉽습니다. 시즌과 조류에 따라 난이도가 달라지니 현지 브리핑을 따르세요.'
     },
     {
         id: 'sipadan',
+        url: '../posting/sipadan.html',
         level: 'advanced',
         badgeLevel: 'Advanced',
         date: '25.11.02',
@@ -28,12 +30,13 @@ window.DIVING_ARCHIVE_POSTS = [
         titleEn: 'Sipadan, Malaysia',
         heroImage: '../assets/images/sipadan.webp',
         excerpt:
-            '하루 입장 인원이 제한되는 프리미엄 사이트입니다. 깊은 월과 강한 조류가 있어 숙련된 다이버에게 적합하며, 거대한 거북이·학상어 떼를 자주 만납니다.',
+            '하루 입장 인원이 제한되는 프리미엄 사이트입니다.\n깊은 월과 강한 조류가 있어 숙련된 다이버에게 적합하며, 거대한 거북이·학상어 떼를 자주 만납니다.',
         body:
             '시파단은 사전 예약과 퍼밋이 필수입니다. 드롭오프와 급격한 수심 변화가 있으므로 정밀 부력 조절과 안전 스톱 습관이 중요합니다.'
     },
     {
         id: 'socorro',
+        url: '../posting/socorro.html',
         level: 'advanced',
         badgeLevel: 'Advanced',
         date: '25.09.01',
@@ -42,12 +45,13 @@ window.DIVING_ARCHIVE_POSTS = [
         titleEn: 'Socorro, Mexico',
         heroImage: '../assets/images/soccoro.webp',
         excerpt:
-            '맨타·고래상어·돌고래 등 대형 펠라직 스펙터클이 기대되는 원정 다이빙입니다. 파도와 항해가 길어 체력과 경험이 요구됩니다.',
+            '맨타·고래상어·돌고래 등 대형 펠라직 스펙터클이 기대되는 원정 다이빙입니다.\n파도와 항해가 길어 체력과 경험이 요구됩니다.',
         body:
             '소코로 군도는 라이브어보드 위주로 운영됩니다. 날씨에 따라 입수가 취소될 수 있으니 일정에 여유를 두는 것이 좋습니다.'
     },
     {
         id: 'bohol',
+        url: '../posting/bohol.html',
         level: 'beginner',
         badgeLevel: 'Beginner',
         date: '24.11.22',
@@ -56,12 +60,13 @@ window.DIVING_ARCHIVE_POSTS = [
         titleEn: 'Bohol, Philippines',
         heroImage: '../assets/images/bohol.webp',
         excerpt:
-            '얕은 산호초와 완만한 조류로 첫 해외 다이빙을 연습하기 좋은 지역입니다. 발리사그·파말리칸 등 포인트별로 특징이 뚜렷합니다.',
+            '얕은 산호초와 완만한 조류로 첫 해외 다이빙을 연습하기 좋은 지역입니다.\n발리사그·파말리칸 등 포인트별로 특징이 뚜렷합니다.',
         body:
             '보홀 알로나 비치를 거점으로 데이 트립이 편리합니다. 매크로 포인트와 넓은 산호 정원을 하루에 나누어 즐기는 일정이 대표적입니다.'
     },
     {
         id: 'bali',
+        url: '../posting/bali.html',
         level: 'intermediate',
         badgeLevel: 'Intermediate',
         date: '24.05.14',
@@ -70,12 +75,13 @@ window.DIVING_ARCHIVE_POSTS = [
         titleEn: 'Bali, Indonesia',
         heroImage: '../assets/images/bali.webp',
         excerpt:
-            '튤렘벵·아메드 등 동부 해안은 블랙 샌드 매크로와 만타 포인트가 가까워 중급자에게 인기입니다. 조류와 수온에 맞춰 포인트를 고르세요.',
+            '튤렘벵·아메드 등 동부 해안은 블랙 샌드 매크로와 만타 포인트가 가까워 중급자에게 인기입니다.\n조류와 수온에 맞춰 포인트를 고르세요.',
         body:
             '발리는 루트에 따라 입문부터 챌린지까지 폭넓게 즐길 수 있습니다. 사원 투어와 다이빙을 묶은 일정이 많아 여행 밀도를 높이기 좋습니다.'
     },
     {
         id: 'galapagos',
+        url: '../posting/galapagos.html',
         level: 'advanced',
         badgeLevel: 'Advanced',
         date: '24.08.20',
@@ -90,6 +96,7 @@ window.DIVING_ARCHIVE_POSTS = [
     },
     {
         id: 'dahab',
+        url: '../posting/dahab.html',
         level: 'beginner',
         badgeLevel: 'Beginner',
         date: '25.07.11',
@@ -104,6 +111,7 @@ window.DIVING_ARCHIVE_POSTS = [
     },
     {
         id: 'palau',
+        url: '../posting/palau.html',
         level: 'intermediate',
         badgeLevel: 'Intermediate',
         date: '23.11.10',
@@ -112,12 +120,13 @@ window.DIVING_ARCHIVE_POSTS = [
         titleEn: 'Palau',
         heroImage: '../assets/images/palau.webp',
         excerpt:
-            '수면 가까이 펼쳐지는 산호 정원과 드롭오프 절벽이 공존하는 대표 목적지입니다. 조류에 따라 난이도가 달라지므로 가이드 브리핑을 꼭 확인하세요.',
+            '수면 가까이 펼쳐지는 산호 정원과 드롭오프 절벽이 공존하는 대표 목적지입니다.\n조류에 따라 난이도가 달라지므로 가이드 브리핑을 꼭 확인하세요.',
         body:
             '팔라우는 마이크로네시아의 보석과 같은 군도로, 블루코너·제리코 월 등 세계적으로 손꼽히는 포인트가 밀집해 있습니다. 맑은 시야와 풍부한 생물 다양성으로 중급 이상 다이버에게 특히 인기 있으며, 날씨와 조류에 맞춘 드리프트 다이빙이 하이라이트입니다.'
     },
     {
         id: 'raja-ampat',
+        url: '../posting/rajaampat.html',
         level: 'advanced',
         badgeLevel: 'Advanced',
         date: '25.03.02',
@@ -126,12 +135,13 @@ window.DIVING_ARCHIVE_POSTS = [
         titleEn: 'Raja Ampat, Indonesia',
         heroImage: '../assets/images/raja ampat.webp',
         excerpt:
-            '섬·채널·드리프트가 복합된 난이도 높은 포인트가 많습니다. 조류와 거리에 익숙한 숙련 다이버에게 적합한 원정지입니다.',
+            '섬·채널·드리프트가 복합된 난이도 높은 포인트가 많습니다.\n조류와 거리에 익숙한 숙련 다이버에게 적합한 원정지입니다.',
         body:
             '라자암팟은 라이브어보드 위주로 운영되며, 퍼밋·환경 보전 규정을 준수해야 합니다. 시즌별 시야와 해류 차이가 크니 가이드와 일정을 꼭 조율하세요.'
     },
     {
         id: 'okinawa',
+        url: '../posting/okinawa.html',
         level: 'beginner',
         badgeLevel: 'Beginner',
         date: '25.01.08',
@@ -146,6 +156,7 @@ window.DIVING_ARCHIVE_POSTS = [
     },
     {
         id: 'maldives',
+        url: '../posting/maldives.html',
         level: 'beginner',
         badgeLevel: 'Beginner',
         date: '25.06.12',
@@ -154,12 +165,13 @@ window.DIVING_ARCHIVE_POSTS = [
         titleEn: 'Maldives',
         heroImage: '../assets/images/maldives.webp',
         excerpt:
-            '수심 차가 완만한 라군과 만타가 모이는 채널이 어우러진 목적지입니다. 시야가 좋은 날에는 초급 코스에서도 만타·상어 등 빅 애니멀을 기대할 수 있습니다.',
+            '수심 차가 완만한 라군과 만타가 모이는 채널이 어우러진 목적지입니다.\n시야가 좋은 날에는 초급 코스에서도 만타·상어 등 빅 애니멀을 기대할 수 있습니다.',
         body:
             '몰디브는 리조트마다 다이빙 패키지가 잘 정비되어 있어 첫 해외 로그를 쌓기에 적합합니다. 조류가 강해지는 채널 다이빙은 경험에 따라 선택하는 것이 좋습니다.'
     },
     {
         id: 'red-sea',
+        url: '../posting/redsea.html',
         level: 'intermediate',
         badgeLevel: 'Intermediate',
         date: '24.09.30',
